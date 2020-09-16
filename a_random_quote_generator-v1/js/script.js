@@ -46,15 +46,21 @@ const printQuote = () => {
   let htmlString = `<p class="quote"> ${randomQuote.quote} </p> <p class="source"> ${randomQuote.source} `;
 
   if ( Object.keys(randomQuote).includes('citation') ) {
-    console.log("This object includes a citation value");
+    htmlString += `<span class="citation"> ${randomQuote.citation} </span>`;
+    // console.log("This object includes a citation value");
   }
 
   if (Object.keys(randomQuote).includes('year')) {
-    console.log("This object includes a year value");
+    htmlString += `<span class="citation"> ${randomQuote.year} </span>`;
+    // console.log("This object includes a year value");
   }
+
+  htmlString += `</p>`
 
   // console.log(`Here Eddie: ${randomQuote.quote}`);
   // console.log(htmlString);
+
+  return document.getElementById('quote-box').innerHTML = htmlString; 
 }
 
 printQuote();
@@ -65,4 +71,4 @@ printQuote();
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-// document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", printQuote, false);
