@@ -3,13 +3,8 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
+//Create an array that holds at least 5 objects, which within the object literals themselves contain at least the quote and source of the quote. In addition, the objects may also potentially contain citation and year values as well.
 
-/*** 
- * `quotes` array 
-***/
 let quotes = [
   {quote: "Hey. Don't ever let somebody tell you you can't do something. Not even me. All right? You got a dream... You gotta protect it. People can't do somethin' themselves, they wanna tell you you can't do it. If you want somethin', go get it. Period.", source: "Chris Gardner:", citation: "Pursuit of Happyness", year: 2006},
   {quote: "Get busy living or get busy dying.", source: "Andy Dufresne", citation: "Shawshank Redemption", year: 1994},
@@ -20,13 +15,8 @@ let quotes = [
 
 // console.log(quotes);
 
-
-/***
- * `getRandomQuote` function
-***/
-
-
 // The getRandomQuote function should create a random number, and use that random number to return a random quote object from the quotes array.
+
 const getRandomQuote = () => {
   let randomNumber = Math.floor(Math.random() * quotes.length);
   console.log(randomNumber);
@@ -36,10 +26,7 @@ const getRandomQuote = () => {
 
 // getRandomQuote();
 
-/***
- * `printQuote` function
-***/
-
+// Program the printQuote function to perform three tasks: (1)call the getRandomQuote function, (2)use the returned quote object to build a string of HTML and quote properties, then (3)use that string to display a random quote in the browser.
 
 const printQuote = () => {
   let randomQuote = getRandomQuote();
