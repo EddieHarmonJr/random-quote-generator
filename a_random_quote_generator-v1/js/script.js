@@ -87,6 +87,24 @@ const printQuote = () => {
 
 printQuote();
 
+//Code below will use a function to change the background color of the page with each new quote.
+//First, define the button. Then, add an event listener that waits for a click.
+//Then, make the function run when button is clicked, which will change the color.
+
+let button = document.getElementById('load-quote');
+let hexValues = "0123456789ABCDEF"
+
+const changeColors = () => {
+  let randomColor = "";
+  for (let i = 0; i < 6; i++) {
+    randomColor += hexValues[Math.floor(Math.random() * 16)]
+  }
+  // console.log(randomColor); Allows me to see what color is being "picked"
+document.body.style.backgroundColor = `#${randomColor}`;
+}
+
+button.addEventListener("click", changeColors()); //This needed to be added after the function declaration
+
 //The code below will load a new quote each time the "show new quote" button is pressed.
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
