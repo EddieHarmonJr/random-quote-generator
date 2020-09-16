@@ -26,11 +26,24 @@ let quotes = [
 ***/
 
 
+// The getRandomQuote function should create a random number, and use that random number to return a random quote object from the quotes array.
+const getRandomQuote = () => {
+  let randomNumber = Math.floor(Math.random() * quotes.length);
+  console.log(randomNumber);
+  console.log(quotes[randomNumber]);
+  return quotes[randomNumber]; //returns random quote OBJECT
+}
+
+getRandomQuote();
 
 /***
  * `printQuote` function
 ***/
 
+const printQuote = () => {
+  let randomQuote = getRandomQuote;
+  let htmlString = `<p class="quote"> ${A random quote} </p> <p class="source"> ${quote source} `;
+}
 
 
 /***
@@ -38,4 +51,4 @@ let quotes = [
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-document.getElementById('load-quote').addEventListener("click", printQuote, false);
+// document.getElementById('load-quote').addEventListener("click", printQuote, false);
