@@ -34,16 +34,30 @@ const getRandomQuote = () => {
   return quotes[randomNumber]; //returns random quote OBJECT
 }
 
-getRandomQuote();
+// getRandomQuote();
 
 /***
  * `printQuote` function
 ***/
 
+
 const printQuote = () => {
-  let randomQuote = getRandomQuote;
-  let htmlString = `<p class="quote"> ${A random quote} </p> <p class="source"> ${quote source} `;
+  let randomQuote = getRandomQuote();
+  let htmlString = `<p class="quote"> ${randomQuote.quote} </p> <p class="source"> ${randomQuote.source} `;
+
+  if ( Object.keys(randomQuote).includes('citation') ) {
+    console.log("This object includes a citation value");
+  }
+
+  if (Object.keys(randomQuote).includes('year')) {
+    console.log("This object includes a year value");
+  }
+
+  // console.log(`Here Eddie: ${randomQuote.quote}`);
+  // console.log(htmlString);
 }
+
+printQuote();
 
 
 /***
