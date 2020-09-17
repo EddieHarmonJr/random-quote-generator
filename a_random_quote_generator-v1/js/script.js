@@ -41,9 +41,47 @@ let quotes = [
     year: 2018,
     tags: "#Movies #MichaelBJordan"
   },
+  {
+    quote: "Now, more than ever, the illusions of division threaten our very existence. We all know the truth: more connects us than separates us. But in times of crisis the wise build bridges, while the foolish build barriers. We must find a way to look after one another as if we were one single tribe.",
+    source: "T'Challa:",
+    citation: "Black Panther",
+    year: 2018,
+    tags: "#Movies #ChadwickBoseman"
+  },
+  {
+    quote: "In any real city, you walk, you brush past people, and people bump into you. In L.A, nobody touches you. We're always behind this metal and glass. I think we miss that touch so much, that we crash into each other just so we can feel something.",
+    source: "Graham Waters:",
+    citation: "Crash",
+    year: 2004,
+    tags: "#Movies #DonCheadle"
+  },
+  {
+    quote: "Life moves pretty fast. If you don’t stop and look around once in a while, you could miss it.",
+    source: "Ferris Bueller:",
+    citation: "Ferris Bueller’s Day Off",
+    year: 1986,
+    tags: "#Movies #MatthewBroderick"
+  },
+  {
+    quote: "How many times do I have to teach you: just because something works doesn’t mean it can’t be improved.",
+    source: "Shuri:",
+    citation: "Black Panther",
+    year: 2018,
+    tags: "#Movies #LetitiaWright"
+  },
+  {
+    quote: "If you’re going to try, go all the way. Otherwise don’t even start. This could mean losing girlfriends, wives, relatives, jobs. And maybe your mind. It could mean not eating for three or four days. It could mean freezing on a park bench. It could mean jail. It could mean derision. It could mean mockery, isolation. Isolation is the gift. All the others are a test of your endurance. Of how much you really want to do it. And you’ll do it, despite rejection in the worst odds. And it will be better than anything else you can imagine.",
+    source: "Charles Bukowski:",
+    tags: "#Poetry #CharlesBukowski"
+  },
+  {
+    quote: "You can’t live your life for other people. You’ve got to do what’s right for you, even if it hurts some people you love.",
+    source: "The Notebook:",
+    tags: "#Movies #NicolasSparks"
+  }
 ];
 
-// console.log(quotes);
+console.log(quotes);
 
 // The getRandomQuote function should create a random number, and use that random number to return a random quote object from the quotes array.
 
@@ -60,7 +98,7 @@ const getRandomQuote = () => {
 
 const printQuote = () => {
   let randomQuote = getRandomQuote();
-  let htmlString = `<p class="quote"> ${randomQuote.quote} </p> <p class="source"> ${randomQuote.source} `;
+  let htmlString = `<p class="quote"> ${randomQuote.quote} </p> <p class="source"> ${randomQuote.source}`;
 
   if (Object.keys(randomQuote).includes('citation')) {
     htmlString += `<span class="citation"> ${randomQuote.citation} </span>`;
@@ -77,7 +115,7 @@ const printQuote = () => {
     // console.log("This object includes a year value");
   }
 
-  htmlString += `</p>`
+  htmlString += `</p>`;
 
   // console.log(`Here Eddie: ${randomQuote.quote}`);
   // console.log(htmlString);
@@ -100,10 +138,20 @@ const changeColors = () => {
     randomColor += hexValues[Math.floor(Math.random() * 16)]
   }
   // console.log(randomColor); Allows me to see what color is being "picked"
-document.body.style.backgroundColor = `#${randomColor}`;
+  document.body.style.backgroundColor = `#${randomColor}`;
+  printQuote();
 }
 
-button.addEventListener("click", changeColors()); //This needed to be added after the function declaration
+//This needed to be added after the function declaration
+button.addEventListener("click", changeColors()); 
+
+//The code below will add a timing feature that will automatically change the quote after a set amount of time regardless if the button is pressed or not.
+
+let newQuoteTimer = () => {
+  setInterval(changeColors(), 10000)
+}
+
+newQuoteTimer();
 
 //The code below will load a new quote each time the "show new quote" button is pressed.
 
