@@ -81,7 +81,7 @@ let quotes = [
   }
 ];
 
-console.log(quotes);
+// console.log(quotes);
 
 // The getRandomQuote function should create a random number, and use that random number to return a random quote object from the quotes array.
 
@@ -143,12 +143,12 @@ const changeColors = () => {
 }
 
 //This needed to be added after the function declaration.
-button.addEventListener("click", changeColors()); 
+button.addEventListener("click", changeColors); 
 
 //The code below will add a timing feature that will automatically change the quote after a set amount of time regardless if the button is pressed or not.
 
 let newQuoteTimer = () => {
-  setInterval(changeColors(), 10000)
+  setInterval(changeColors, 10000)
 }
 
 newQuoteTimer();
