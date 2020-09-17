@@ -77,7 +77,7 @@ let quotes = [
   {
     quote: "You can’t live your life for other people. You’ve got to do what’s right for you, even if it hurts some people you love.",
     source: "The Notebook:",
-    tags: "#Movies #NicolasSparks"
+    tags: "#Books #NicolasSparks"
   }
 ];
 
@@ -137,12 +137,12 @@ const changeColors = () => {
   for (let i = 0; i < 6; i++) {
     randomColor += hexValues[Math.floor(Math.random() * 16)]
   }
-  // console.log(randomColor); Allows me to see what color is being "picked"
+  // console.log(randomColor); Allows me to see what color is being "picked".
   document.body.style.backgroundColor = `#${randomColor}`;
   printQuote();
 }
 
-//This needed to be added after the function declaration
+//This needed to be added after the function declaration.
 button.addEventListener("click", changeColors()); 
 
 //The code below will add a timing feature that will automatically change the quote after a set amount of time regardless if the button is pressed or not.
